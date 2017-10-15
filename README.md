@@ -1,3 +1,38 @@
+# Docdock Plus (work-in-progress !!)
+
+Envisoning a few tweaks to make docdock a little less documentation-centric.
+
+Main changes:
+
+1. Add navbar to the top 
+    * This would default to being active across all types/section
+        + optionally including docdock
+    * Allow user to readily find other types of content (e.g., blog, about, etc)
+    * Use Hugo's built in menu system for configuration.
+        + Use "top" to distinguish top menu items from docdock's 
+
+2. Create section/views for blog
+    * Reading (single)
+    * Browse (list)
+    * View by tag, category, etc
+    
+3. Create section for generic pages.
+    * Currently this requires setting front matter for each page.
+    * Option to default existing pages, if found in appropriate directory, is handy.
+    * Also useful to demonstrate technique for other users to modify.
+
+Strategy:
+
+1. Try to work with docdock's defaults (minimal changes to structure and code).
+
+2. Use user-configurable site parameters to specify array of sections to filter from docdock's menu generation view (obviously modifying the view modestly to achieve this).
+
+3. Create layouts 'blog' and 'page' to render these sections enumerated sections differently (without requiring further code changes).
+
+.... that's it for now.
+
+***
+
 # Hugo docDock Theme
 
 This repository contains a theme for [Hugo](https://gohugo.io/), based on great [Matcornic Learn theme](https://github.com/matcornic/hugo-theme-learn/).
