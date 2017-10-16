@@ -18,7 +18,7 @@ disableNavChevron = false # set true to hide next/prev chevron, default is false
 
 # This must be defined and defined as non-zero length array
 # If you dont want to filter anything just filter some non-existing section (e.g., [ 'blahblah'] )
-excludedSections =  [ "blog", "page" ]  # sections to exclude from docdock's menu
+excludedSections =  [ "blog", "page"]  # sections to exclude from docdock's menu
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
