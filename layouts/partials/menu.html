@@ -22,16 +22,32 @@
             </li>
         {{- end}}
 
-        {{- if eq .Site.Params.ordersectionsby "title"}}
-          {{- range where .Site.Home.Sections.ByTitle ".Section" "not in" $excludedSections }}
-          {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks}}
-          {{- end}}
-        {{- else}}
-          {{- range where .Site.Home.Sections.ByWeight ".Section" "not in" $excludedSections }}
-          {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks}}
-          {{- end}}
-        {{- end}}
+        {{- if eq .Site.Params.ordersectionsby "title" }}
+          {{ .Scratch.Set "sectionList" .Site.Home.Sections.ByTitle }}
+        {{- else }}
+          {{ .Scratch.Set "sectionList" .Site.Home.Sections.ByWeight }}
+        {{- end }}
+        {{ $sectionList := .Scratch.Get "sectionList" }}
 
+        {{- range $sectionList }}
+            {{- if and (ne .Params.donotdescend true) (ne .Params.hidefrommenu true) }}
+              {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks}}
+            {{- else }}
+              {{- if ne .Params.hidefrommenu true }}
+                {{- safeHTML .Params.head}}
+                <li data-nav-id="{{.URL}}" class="dd-item
+                {{- if or (eq .URL $currentNode.URL) (.IsAncestor $currentNode)}} active{{end}}
+                ">
+                    <a href="{{ .RelPermalink}}">
+                       <span>{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</span>
+                       <i class="fa fa-arrow-circle-right fa-lg category-icon"></i>
+                       {{- if $showvisitedlinks}}<i class="fa fa-circle-thin read-icon"></i>{{end}}
+                    </a>
+                </li> 
+              {{- end}}
+            {{- end }}
+
+        {{- end }}
 
         {{- with .Site.Menus.shortcuts}}
           <section id="shortcuts">
