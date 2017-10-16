@@ -75,7 +75,11 @@
         {{end}}
         <div id="body-inner">
           {{if not .IsHome}}
-            <h1>{{.Title}}</h1>
+            {{if .Content }}
+              <h1>{{.Title}}</h1>
+            {{ else }}
+              <h1><b>{{.Data.Singular}}:</b> {{.Title}}</h1>
+            {{ end }}
           {{end}}
 
 {{define "breadcrumb"}}

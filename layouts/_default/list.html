@@ -11,19 +11,23 @@
 
 
 {{if not .Content }}
-	{{ $paginator := .Paginator }}
 
+	{{ $paginator := .Paginator }}
 	<div class="extra-pagination inner">
 	{{ partial "pagination.html" $paginator }}
 	</div>
 
-	{{ range $index, $page := $paginator.Pages }}
-	   {{ .Render "li" }}
+	{{ range $paginator.Pages }}
+		{{/* note: rendering li (identical code and name) with partial instead of full template */}}
+	   {{ partial "li" . }}
 	{{ end }}
 
 	<div style="margin-bottom:2rem"></div>
 
 	{{ partial "pagination.html" $paginator }}
+
+	<div><a href="/tags">List of all tags</a></div>
+
 {{end}}
 
 {{ partial "footer.html" . }}
