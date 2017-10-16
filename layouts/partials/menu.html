@@ -22,14 +22,15 @@
         {{- end}}
 
         {{- if eq .Site.Params.ordersectionsby "title"}}
-          {{- range .Site.Home.Sections.ByTitle}}
+          {{- range where .Site.Home.Sections.ByTitle ".Section" "not in" $excludedSections }}
           {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks}}
           {{- end}}
         {{- else}}
-          {{- range .Site.Home.Sections.ByWeight}}
+          {{- range where .Site.Home.Sections.ByWeight ".Section" "not in" $excludedSections }}
           {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks}}
           {{- end}}
         {{- end}}
+
 
         {{- with .Site.Menus.shortcuts}}
         <section id="shortcuts">
