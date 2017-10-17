@@ -27,8 +27,7 @@
         display:none !important;
       }
     </style>
-
-    
+     <link href="{{"css/type-overrides.css" | relURL}}" rel="stylesheet">
 
     {{ partial "custom-head.html" . }}
   </head>
@@ -36,7 +35,7 @@
     {{ partial "menu.html" . }}
         <section id="body">
         <div id="overlay"></div>
-        <div class="padding highlightable">
+        <div class="padding highlightable {{ .Type}}-container">
         {{if not .IsHome}}
           <div id="top-bar">
             {{ if and (or .IsPage .IsSection) .Site.Params.editURL }}
@@ -72,16 +71,10 @@
               <a class="label label-default" href="{{$.Site.BaseURL}}tags/{{ $tag | urlize }}">{{ $tag }}</a>
             {{ end }}
           </div>
+          <br>
         {{end}}
         <div id="body-inner">
-          {{if not .IsHome}}
-            {{if .Content }}
-              <h1>{{.Title}}</h1>
-            {{ else }}
-              <h1><b>{{.Data.Singular}}:</b> {{.Title}}</h1>
-            {{ end }}
-          {{end}}
-
+ 
 {{define "breadcrumb"}}
 {{ if .page.Parent}}
 {{$value := (printf "<a href='%s'>%s</a> > %s" .page.Parent.URL .page.Parent.Title .value)}}

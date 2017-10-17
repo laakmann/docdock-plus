@@ -1,0 +1,7 @@
+{{if not .IsHome}}
+	{{if .Content }}
+	  <h1>{{.Title}}</h1>
+	{{ else }}
+	  <h1><b>{{.Data.Singular}}:</b> {{.Title}}</h1>
+	{{ end }}
+{{end}}
