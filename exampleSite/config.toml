@@ -1,7 +1,5 @@
 baseURL = "/"
 languageCode = "en-us"
-DefaultContentLanguage = "en"
-
 title = "Docdock Plus"
 theme = "hugo-theme-docdock-plus"
 themesdir = "../.."
@@ -15,6 +13,7 @@ ordersectionsby = "weight" # ordersectionsby = "title"
 disableHomeIcon = false # default is false
 disableSearch = false # default is false
 disableNavChevron = false # set true to hide next/prev chevron, default is false
+
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
@@ -42,3 +41,10 @@ weight = 20
 name = "<i class='fa fa-bullhorn'></i> Credits"
 url = "/credits"
 weight = 30
+
+
+[params.widgets]
+  recent_articles = true
+  categories = true
+  tags = true
+  tag_cloud = true
