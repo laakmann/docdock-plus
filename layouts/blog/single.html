@@ -1,8 +1,12 @@
 {{ partial "header.html" . }}
-{{ partial "header-title.html" . }}
 
+<div>
+  {{ partial "content/h1-title" . }}
+  {{ partial "content/post-meta" . }}
+</div>
 
 {{ .Content }}
+
 
 <footer class=" footline" >
 	{{with .Params.LastModifierDisplayName}}
