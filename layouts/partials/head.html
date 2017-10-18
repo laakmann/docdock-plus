@@ -27,7 +27,8 @@
         display:none !important;
       }
     </style>
-     <link href="{{"css/type-overrides.css" | relURL}}" rel="stylesheet">
+    <!--     temporary cache invalidation -->     
+    <link href="{{"css/type-overrides.css?{{ .Now.Unix }}" | relURL}}" rel="stylesheet">
 
     {{ partial "custom-head.html" . }}
   </head>

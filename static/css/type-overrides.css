@@ -1,3 +1,29 @@
+/* to my non-expert eyes the theme's default white contrasts too much */
+body {
+	background-color: #f8f9fa !important;
+}
+
+.blog-container .page-link {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #007bff;
+    border: 1px solid #ddd;
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+
+.blog-container .pagination {
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: .25rem;
+}
+
+
 
 .blog-container h1 {
 	text-transform: none;
@@ -50,8 +76,14 @@
   margin-top: 0px;
 }
 
+div.post-container {
+	padding: 10px;
+	border: solid gray;
+	border-width: 1px;
+	border-radius: 25px;
+}
+
 .blog-container .post-container {
-	background-color: #fff;
 	margin-bottom: 1rem;
 	padding-top: 1rem;
 }
@@ -68,11 +100,11 @@
 	border: 0px !important;
 }
 
-p.post-more-link > .btn {
+.blog-container p.post-more-link > .btn {
 	color: blue !important;
 }
 
-p.post-more-link > .btn-outline-primary {
+.blog-container p.post-more-link > .btn-outline-primary {
     color: #007bff !important;
     background-color: transparent !important;
     background-image: none !important;
