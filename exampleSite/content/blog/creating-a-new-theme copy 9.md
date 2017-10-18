@@ -1,14 +1,14 @@
 +++
-title = "This is 6th copy of blog post"
+title = "This is 9th copy of blog post"
 description = ""
 tags = ["theme","hugo"]
 categories = ["theme"]
-date = "2017-10-17"
+date = "2017-10-18"
 banner = "http://placehold.it/1024x200"
 +++
 
 
 ## Introduction
 
-Just more filler.....6
+Just more filler.....9
 

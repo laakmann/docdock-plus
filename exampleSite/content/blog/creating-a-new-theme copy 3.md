@@ -3,7 +3,7 @@ title = "This is 3rd copy ofblog post"
 description = ""
 tags = ["theme","hugo"]
 categories = ["theme"]
-date = "2017-10-17"
+date = "2017-10-12"
 banner = "http://placehold.it/1024x200"
 +++
 
